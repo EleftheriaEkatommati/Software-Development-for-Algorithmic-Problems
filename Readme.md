@@ -27,8 +27,7 @@ To compile the project, follow these steps:
 - Compile the Code: Use the following command to compile the code:
 
   ` gcc -o lsh_project main.c random.c image_vector.c hash_functions.c algorithms.c io_handling.c -lm `
-
-- This command compiles the main program and links all the necessary source files. The -lm flag is used to link the math library.
-  Run the Executable: After compiling, run the executable with:
+  This command compiles the main program and links all the necessary source files. The -lm flag is used to link the math library.
+- Run the Executable: After compiling, run the executable with:
   
   ` ./lsh_project `
