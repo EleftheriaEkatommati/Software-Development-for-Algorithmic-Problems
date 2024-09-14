@@ -2,6 +2,7 @@
 **Contributors:**
 - Theodora Archontaki
 - Eleftheria Ekatommati
+
 This project implements a Locality-Sensitive Hashing (LSH) algorithm for image retrieval using the MNIST dataset. The main components are:
 ## Random Number Generation
 - Functions: Generate random numbers from normal and uniform distributions.
@@ -24,7 +25,10 @@ To compile the project, follow these steps:
 - Ensure Dependencies: Make sure you have all necessary dependencies installed. This may include libraries for handling MNIST data, random number generation, and any other specific requirements.
 - Navigate to Project Directory: Open your terminal and navigate to the root directory of the project.
 - Compile the Code: Use the following command to compile the code:
+
 ` gcc -o lsh_project main.c random.c image_vector.c hash_functions.c algorithms.c io_handling.c -lm `
+
 - This command compiles the main program and links all the necessary source files. The -lm flag is used to link the math library.
   Run the Executable: After compiling, run the executable with:
+  
 ` ./lsh_project `
