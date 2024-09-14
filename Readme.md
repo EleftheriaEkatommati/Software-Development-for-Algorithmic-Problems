@@ -7,7 +7,7 @@ This project implements a Locality-Sensitive Hashing (LSH) algorithm for image r
 ## Random Number Generation
 - Functions: Generate random numbers from normal and uniform distributions.
 - Purpose: Used for initializing hash functions and other stochastic processes in the algorithm.
-- Image Vector Representation
+##Image Vector Representation
 - Structure: Represents MNIST images as vectors of 784 pixels.
 - Details: Each image is flattened into a single vector to facilitate mathematical operations.
 ## Hash Functions
