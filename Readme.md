@@ -1,4 +1,4 @@
-# Project_1 Summary
+# Project_1 Overview
 **Contributors:**
 - Theodora Archontaki
 - Eleftheria Ekatommati
@@ -32,3 +32,74 @@ To compile the project, follow these steps:
 - Run the Executable: After compiling, run the executable with:
   
   ` ./lsh_project `
+
+# Project_2 Overview
+This project focuses on implementing and analyzing various graph search algorithms using C++. It encompasses a range of functionalities from random number generation to handling MNIST images, constructing different types of graphs, and performing graph search operations.
+
+## Key Components:
+## Random Number Generation
+- Normal Distribution: Functions to generate random numbers following a normal distribution.
+- Uniform Distribution: Functions to generate random numbers following a uniform distribution.
+## Image Handling
+- MNIST Images: Structures and functions designed to manage MNIST images, including reading, storing, and processing image data.
+- Image Vectors: Methods to convert images into vectors for further processing in graph algorithms.
+## Graph Construction
+- Directed Graphs: Classes and methods to create and manipulate directed graphs.
+- k-Nearest Neighbors (k-NN): Implementation of k-NN graphs where each node is connected to its k nearest neighbors.
+- Mutual Reachability Nearest Graph (MRNG): Construction of MRNG graphs to enhance search efficiency.
+## Algorithms
+- Graph-based Nearest Neighbor Search (GNNS): Implementation of GNNS algorithms to find the nearest neighbors in a graph.
+- Exhaustive Search: Methods for performing exhaustive search operations on graphs to ensure comprehensive analysis.
+## Usage
+- To execute the graph search algorithms, use the following command format:
+
+  `$ ./graph_search –d <input file> –q <query file> –k <int> -E <int> -R <int> -N <int> -m <1 GNNS, 2 MRNG> -ο <output file> `
+
+- -d: Path to the input file containing the graph data.
+- -q: Path to the query file with the search queries.
+- -k: Number of nearest neighbors to consider.
+- -E: Parameter for the graph construction algorithm.
+- -R: Parameter for the graph construction algorithm.
+- -N: Parameter for the graph construction algorithm.
+- -m: Mode of the algorithm (1 for GNNS, 2 for MRNG).
+- -ο: Path to the output file where results will be saved.
+
+
+
+
+
+# Project_3 Overview
+
+This project involves implementing various algorithms for image processing and clustering using MNIST datasets. The main components include LSH, Hypercube, and Clustering algorithms.
+
+## Files and Directories
+- **Random.h, Random.cpp**: Unchanged from the previous implementation.
+- **Image_vector.h**: Defines `create_image_initial` function and includes external integers `Dim` and `Dim_initial`.
+- **Create_image_vector.cpp**: Reads image vectors from input files and stores them in appropriate arrays.
+- **Hash.h, Hash.cpp**: Adds `Euclidian_dist_initial` function for distance calculation in the original dimension.
+- **lsh.cpp**: Main file for executing algorithms on reduced and original dimensions.
+- **Hypercube**: Similar changes as LSH for handling image vectors in different dimensions.
+- **Cluster**: Implements clustering algorithms with methods like Classic, LSH, or Hypercube.
+- **Reduce.py**: Handles MNIST data loading, autoencoder training, and latent vector storage.
+
+## Compilation and Execution
+### LSH
+```sh
+make lsh
+./lsh -d <input_file> -q <query_file> -k <int> -L <int> -o <output_file> -N <int> -R <radius>
+
+Hypercube
+make cube
+./cube -d <input_file> -q <query_file> -k <int> -M <int> -probes <int> -o <output_file> -N <int> -R <radius>
+
+GNNS
+make graph_search
+./graph_search -d <input_file> -q <query_file> -k <int> -E <int> -R <int> -N <int> -m 1 -o <output_file>
+
+Clustering
+make cluster
+./cluster -i <input_file> -c <configuration_file> -o <output_file> -complete -m <method>
+
+Important Notes
+Ensure to set executable permissions for initial dimension programs using chmod +x.
+Input files should be in .txt format with appropriate dimensions.
