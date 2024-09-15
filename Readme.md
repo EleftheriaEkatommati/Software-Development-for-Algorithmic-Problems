@@ -70,36 +70,48 @@ This project focuses on implementing and analyzing various graph search algorith
 
 # Project_3 Overview
 
-This project involves implementing various algorithms for image processing and clustering using MNIST datasets. The main components include LSH, Hypercube, and Clustering algorithms.
+This project involves implementing various algorithms for image processing and clustering using MNIST datasets. The main components include LSH, Hypercube, Clustering algorithms, and a Neural Network for dimensionality reduction.
 
-## Files and Directories
-- **Random.h, Random.cpp**: Unchanged from the previous implementation.
-- **Image_vector.h**: Defines `create_image_initial` function and includes external integers `Dim` and `Dim_initial`.
-- **Create_image_vector.cpp**: Reads image vectors from input files and stores them in appropriate arrays.
-- **Hash.h, Hash.cpp**: Adds `Euclidian_dist_initial` function for distance calculation in the original dimension.
-- **lsh.cpp**: Main file for executing algorithms on reduced and original dimensions.
-- **Hypercube**: Similar changes as LSH for handling image vectors in different dimensions.
-- **Cluster**: Implements clustering algorithms with methods like Classic, LSH, or Hypercube.
-- **Reduce.py**: Handles MNIST data loading, autoencoder training, and latent vector storage.
+## File Structure
+- **Random.h, Random.cpp**: No changes from the previous implementation.
+- **Image_vector.h**: Added `create_image_initial` function and defined `Dim` and `Dim_initial`.
+- **Create_image_vector.cpp**: Modified `create_image` function to read image vectors and initialize `Dim`.
+- **Hash.h, Hash.cpp**: Added `Euclidian_dist_initial` function for distance calculation in original dimensions.
+- **lsh.cpp**: Main file for executing algorithms in reduced dimensions and calling algorithms in original dimensions.
 
-## Compilation and Execution
-### LSH
-```sh
-make lsh
-./lsh -d <input_file> -q <query_file> -k <int> -L <int> -o <output_file> -N <int> -R <radius>
+## Algorithms
+### LSH (Locality-Sensitive Hashing)
+- **Functions**: `Hash initialize`, `HashFunctions_initialize`, `Euclidian Hash`, `Hash clear`, `Query Hash`.
+- **Distance Calculation**: `Euclidian_dist` for reduced dimensions, `Euclidian_dist_initial` for original dimensions.
 
-Hypercube
-make cube
-./cube -d <input_file> -q <query_file> -k <int> -M <int> -probes <int> -o <output_file> -N <int> -R <radius>
+### Hypercube
+- **Functions**: `Random_projection_to_HyperCube`, `Random_projection_to_HyperCube_N`, `Random_projection_to_HyperCube_RangeSearch`.
+- **Distance Calculation**: Similar to LSH, with functions for both reduced and original dimensions.
 
-GNNS
-make graph_search
-./graph_search -d <input_file> -q <query_file> -k <int> -E <int> -R <int> -N <int> -m 1 -o <output_file>
+### Clustering
+- **Functions**: `Euclidian_Nearest_N`, `Euclidian_NNN` for distance calculation.
+- **Distance Calculation**: Uses `Euclidian_dist_initial` for original dimensions.
 
-Clustering
-make cluster
-./cluster -i <input_file> -c <configuration_file> -o <output_file> -complete -m <method>
+### Neural Network
+- **Purpose**: The neural network is used for dimensionality reduction of the MNIST dataset.
+- **Structure**: The network includes several layers, with each node (perceptron) performing a mathematical function to gather and classify information.
+- **Training**: The network is trained using an autoencoder to learn the latent representations of the input data.
+- **Functions**: `load_MNIST_data`, `train_autoencoder`, `store_latent_vectors`.
 
-Important Notes
-Ensure to set executable permissions for initial dimension programs using chmod +x.
-Input files should be in .txt format with appropriate dimensions.
+## Execution
+### Compilation
+- **LSH**: `make lsh` in the LSH folder and `make` in the LSH_initial folder.
+- **Hypercube**: `make cube` in the Cube folder and `make` in the Cube_initial folder.
+- **Clustering**: `make cluster` in the Cluster folder and `make` in the Cluster_initial folder.
+
+### Running the Algorithms
+- **LSH**: `./lsh` or `./lsh –d <input_file> –q <query_file> -k <int> -L <int> -o <output_file> -N <int> -R <radius>`.
+- **Hypercube**: `./cube` or `./cube –d <input_file> –q <query_file> –k <int> -M <int> -probes <int> -o <output_file> -N <int> -R <radius>`.
+- **Clustering**: `./cluster –i <input_file> –c <configuration_file> -o <output_file> -complete -m <method>`.
+
+## Notes
+- Ensure to set executable permissions for initial dimension programs using `chmod +x`.
+- Input files should be in .txt format with appropriate dimensions.
+
+## Contact
+For any queries, please contact the project maintainers.
