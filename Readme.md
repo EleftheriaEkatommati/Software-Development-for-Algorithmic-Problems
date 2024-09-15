@@ -113,5 +113,3 @@ This project involves implementing various algorithms for image processing and c
 - Ensure to set executable permissions for initial dimension programs using `chmod +x`.
 - Input files should be in .txt format with appropriate dimensions.
 
-## Contact
-For any queries, please contact the project maintainers.
